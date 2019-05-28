@@ -1,1 +1,96 @@
-Hello GitHub Pages
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>GPU Training Leaderboard</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://chuanli.easyapi.com/static/styles/styles.css">
+
+    <script src="https://chuanli.easyapi.com/static/js/data.js"></script>
+
+    <script src="https://chuanli.easyapi.com/static/js/leaderboard.js"></script>
+
+  </head>
+  <body>
+
+    <div id="content">
+      <div class="title">
+        <h1>GPU Training leaderboard</h1>
+        <div style="margin: 40px 40px 0 0;"><a href="https://www.easyapi.com" target="_blank"><img src="https://chuanli.easyapi.com/static/images/logo.png" width="150"></a></div>
+      </div>
+
+      <!-- Placeholder for filter buttons -->
+      <div class="filterGroup fontBigger" id="filters">
+      </div>
+
+      <br>
+
+      <!-- Placeholder for leaderboard table. -->
+      <div id="table_content">
+        <table id="leaderboard" class="display" cellspacing="0" width="100%">
+        </table>
+      </div>
+
+      <div id="Metrics">
+        <h2>Metrics</h2>
+        <div id="metrics_content">
+          <div class="metric_name">
+            <b>Image/sec: </b>
+          </div>
+          <div class="metric_desc">
+            The number of images processed every second in training.
+          </div>
+          <div class="metric_name">
+            <b>Speedup: </b>
+          </div>
+          <div class="metric_desc">
+            The improvement over a <b>single 1080 Ti</b>.
+          </div>
+          <div class="metric_name">
+            <b>GPU Cost ($): </b>
+          </div>
+          <div class="metric_desc">
+            The cost of all GPUs, including accessories such as NVlink.
+          </div>
+          <div class="metric_name">
+            <b>Data: </b>
+          </div>
+          <div class="metric_desc">
+            Synthetic data is used to isolate GPU performance from other factors, such as CPU and disk I/O.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <script type="text/javascript">
+
+      // Table
+      // create filter buttons
+      for (var key in def_filters) {
+          if (def_filters.hasOwnProperty(key)) {
+            create_filter(key, def_filters[key])
+          }
+      }
+
+      // create table
+      buildTable(data, def_columns, get_filters())
+
+      // Allow filter buttons to rebuild the table
+      $("input.table_radio:radio").change(function(){
+        buildTable(data, def_columns, get_filters())
+      })
+
+    </script>
+
+  </body>
+</html>
