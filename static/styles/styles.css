@@ -1,0 +1,128 @@
+/* Content */
+.title {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+div h1 {
+  margin-top: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+  font-family: Consolas,Courier,monospace;
+}
+
+#table_content {
+  margin-left: 40px;
+  margin-right: 40px;
+  font-family: Consolas,Courier,monospace;
+}
+
+tbody tr {
+  cursor: pointer;
+}
+
+
+table.dataTable.display tbody tr{
+    background-color: #EBEDEF;
+}
+
+table.display tbody tr:nth-child(even):hover td{
+    background-color: #F2D7D5;
+}
+
+table.display tbody tr:nth-child(odd):hover td {
+    background-color: #F2D7D5;
+}
+
+table.dataTable.display tbody tr.smalltable {
+    cursor: default;
+    background-color: #d9e6fc;
+}
+
+table.dataTable.display tbody tr table tr {
+    cursor: default;
+    background-color: #d9e6fc;
+}
+
+table.dataTable.display tbody tr table tr:hover {
+    cursor: default;
+    background-color: #d9e6fc;
+}
+
+div h2 {
+  margin-top: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+  font-family: Consolas,Courier,monospace;
+}
+
+#metrics_content {
+  margin-left: 40px;
+  margin-right: 40px;
+  border: 1px solid #5D6063;
+  border-radius: 3px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  font-family: Consolas,Courier,monospace;
+}
+
+
+.metric_name {
+  margin-left: 35px;
+  margin-top: 20px;
+  font-family: Consolas,Courier,monospace
+}
+
+.metric_desc {
+  margin-left: 75px;
+  font-family: Consolas,Courier,monospace;
+}
+
+/* Font */
+.fontBigger {
+  font-size:18px;
+  font-weight:300;
+  font-family: Consolas,Courier,monospace;
+}
+
+/* Filter ------------------------------------ */
+.filterGroup {
+  display:flex;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom:20px;
+  flex-wrap: wrap;
+}
+
+.filterName {
+  padding: 5px 0px;
+  width:150px;
+}
+
+.filter {
+  margin: 5px 5px 5px 5px;
+  border: 2px solid #fff;
+  width: 1000px;
+  display: flex;
+}
+
+.btn {
+  margin: 2px 2px 2px 2px;
+}
+/* Row details */
+td.details-control {
+    text-align:center;
+    color:forestgreen;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+  text-align:center;
+  color:red;
+}
+
+#chart_div text{
+  font-family: Consolas,Courier,monospace !important;
+  border-color: red;
+}
