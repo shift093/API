@@ -3,7 +3,7 @@ var data = (function () {
     $.ajax({
         'async': false,
         'global': false,
-        'url': '/static/js/benchmarks/data.json',
+        'url': '/API/static/js/benchmarks/data.json',
         'dataType': "json",
         'success': function (data) {
             json = data;
