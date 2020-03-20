@@ -3,7 +3,7 @@ var data = (function () {
     $.ajax({
         'async': false,
         'global': false,
-        'url': 'static/js/data/data.json',
+        'url': 'static/data/data.json',
         'dataType': "json",
         'success': function (data) {
             json = data;
