@@ -144,11 +144,11 @@ function format_child ( d ) {
 
   var summary_link
   if (lambda_mode === 0){
-    summary_link = '<a href="/deep-learning/gpu-benchmarks/summary?gpu_id='+d['GPU'] + '" target="_blank">'
+    summary_link = '<a href="/API/summary?gpu_id='+d['GPU'] + '" target="_blank">'
   }
   else
   {
-    summary_link = '<a href="/deep-learning/gpu-benchmarks/summary?gpu_id='+d['GPU']+'&lambda_mode=' + lambda_mode + '" target="_blank">'
+    summary_link = '<a href="/API/summary?gpu_id='+d['GPU']+'&lambda_mode=' + lambda_mode + '" target="_blank">'
   }
 
   return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
